@@ -1,9 +1,12 @@
 package com.brasil.juniorpharma.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 
@@ -20,6 +23,10 @@ public class Categoria {
 	
 	@NotBlank(message = "O atributo descricao e Obrigatorio!")
 	private String descricao;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("Categoria")
+	private Produto produto;
 
 	public Long getId() {
 		return id;
@@ -44,6 +51,16 @@ public class Categoria {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+
+	public Produto getProduto() {
+		return produto;
+	}
+
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
+	
+	
 	
 	
 }

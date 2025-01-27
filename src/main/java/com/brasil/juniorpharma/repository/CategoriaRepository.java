@@ -10,4 +10,8 @@ import com.brasil.juniorpharma.model.Categoria;
 public interface CategoriaRepository extends JpaRepository<Categoria, Long>{
 
 	public List <Categoria> findAllByNomeContainingIgnoreCase(@Param("nome") String nome);
+	
+	public List <Categoria> findAllByPrecoContainingIgnoreCase(@Param("nome") String preco);
+	
+	public List <Categoria> findAllByCategoriaContainingIgnoreCase(@Param("nome") String categoria);
 }
