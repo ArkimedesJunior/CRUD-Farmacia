@@ -28,6 +28,11 @@ public class Produto {
 	@NotNull(message = "O Atributo Preço é obrigatório")
 	private String preco;
 	
+	@NotNull(message = "O Atributo descricao é obrigatório")
+	private String descricao;
+	
+	
+	
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "produto", cascade = CascadeType.REMOVE)
     @JsonIgnoreProperties("Produto")
     private List<Categoria> categoria;
@@ -64,6 +69,15 @@ public class Produto {
 		this.categoria = categoria;
 	}
 
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	
 	
 	
 

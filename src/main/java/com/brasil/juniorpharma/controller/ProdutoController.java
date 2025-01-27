@@ -46,7 +46,7 @@ public class ProdutoController {
 	    
 	    @GetMapping("/preco/{preco}")
 		public ResponseEntity<List<Produto>> getByPreco(@PathVariable String preco){
-			return ResponseEntity.ok(produtoRepository.findAllByprecoContainingIgnoreCase(preco));
+			return ResponseEntity.ok(produtoRepository.findAllByPrecoContainingIgnoreCase(preco));
 			
 	    }
 	    
